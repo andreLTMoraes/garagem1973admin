@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import * as S from './styled';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <S.Header>
+        <h1>Garagem 1973 Admin</h1>
+      </S.Header>
+      <S.MenuSection>
+        <h1>Produtos</h1>
+        <h1>Clientes</h1>
+      </S.MenuSection>
+      <S.ListSection>
+
+      </S.ListSection>
+      <S.CreditSection id='credits'>
+        <span>Desenvolvido por <S.Link href='https://github.com/andreLTMoraes/' target='_blank' rel='noreferrer'>André Moraes</S.Link></span>
+      </S.CreditSection>
     </div>
   );
 }
