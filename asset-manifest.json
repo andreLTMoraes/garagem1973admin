@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/garagem1973admin/static/css/main.848426ee.chunk.css",
+    "main.js": "/garagem1973admin/static/js/main.f5caf3de.chunk.js",
+    "main.js.map": "/garagem1973admin/static/js/main.f5caf3de.chunk.js.map",
+    "runtime-main.js": "/garagem1973admin/static/js/runtime-main.d28460c1.js",
+    "runtime-main.js.map": "/garagem1973admin/static/js/runtime-main.d28460c1.js.map",
+    "static/css/2.41b8a27f.chunk.css": "/garagem1973admin/static/css/2.41b8a27f.chunk.css",
+    "static/js/2.883000a4.chunk.js": "/garagem1973admin/static/js/2.883000a4.chunk.js",
+    "static/js/2.883000a4.chunk.js.map": "/garagem1973admin/static/js/2.883000a4.chunk.js.map",
+    "index.html": "/garagem1973admin/index.html",
+    "static/css/2.41b8a27f.chunk.css.map": "/garagem1973admin/static/css/2.41b8a27f.chunk.css.map",
+    "static/css/main.848426ee.chunk.css.map": "/garagem1973admin/static/css/main.848426ee.chunk.css.map",
+    "static/js/2.883000a4.chunk.js.LICENSE.txt": "/garagem1973admin/static/js/2.883000a4.chunk.js.LICENSE.txt",
+    "static/media/mdb.css": "/garagem1973admin/static/media/arrow_right.f7c6ac6d.svg",
+    "static/media/all.min.css": "/garagem1973admin/static/media/fa-solid-900.efbd5d20.eot",
+    "static/media/logoLanding.72c5b07e.png": "/garagem1973admin/static/media/logoLanding.72c5b07e.png",
+    "static/media/product.f6348ea6.png": "/garagem1973admin/static/media/product.f6348ea6.png",
+    "static/media/tire1.70ff4a57.png": "/garagem1973admin/static/media/tire1.70ff4a57.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d28460c1.js",
+    "static/css/2.41b8a27f.chunk.css",
+    "static/js/2.883000a4.chunk.js",
+    "static/css/main.848426ee.chunk.css",
+    "static/js/main.f5caf3de.chunk.js"
+  ]
+}
