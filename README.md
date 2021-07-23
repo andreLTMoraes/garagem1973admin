@@ -18,6 +18,7 @@ Garagem 1973 Admin
   <a href="#o-projeto">O Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#recursos">Recursos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#melhorias">Melhorias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#licença">Licença</a>
 </p>
 
@@ -47,6 +48,11 @@ O segundo desafio proposto no Hiring Coders foi desenvolver uma página para ges
 - ⚛️ **React** — Biblioteca JavaScript de código aberto com foco em criar interfaces de usuário em páginas web.
 - :nail_care: **Styled Components** — Utiliza Template Literals com tags e o poder do CSS para estilizar componentes.
 - :octocat: **GitHub Pages** — Sites para você e seus projetos, hospedados diretamente de seu repositório GitHub.
+
+## Melhorias
+- Utilizar a Context API
+- Melhorar a responsividade
+- Melhorar a validação dos campos de entrada
 
 ## Licença
 

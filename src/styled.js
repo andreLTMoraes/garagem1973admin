@@ -60,6 +60,16 @@ export const AddButton = styled.button`
     border-radius: .5rem;
     border: none;
     padding: .5rem 2rem !important;
+
+    &:hover {
+        filter: brightness(1.2);
+    }
+
+    &:focus,
+    &:active {
+        outline: none;
+        box-shadow: none;
+    }
 `;
 
 export const ListHeader = styled.div`

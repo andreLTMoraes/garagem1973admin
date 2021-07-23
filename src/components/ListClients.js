@@ -2,7 +2,8 @@ import React from 'react'
 import * as S from './styled'
 
 export default function ListClients({
-    listClients
+    listClients,
+    itemClick=()=>{}
 }) {
     return (
         <S.Table>
@@ -24,8 +25,8 @@ export default function ListClients({
                 </S.Column>
             </S.Row>
             <S.Line weight='3'/>
-            {listClients.map(client => (<>
-                <S.Row>
+            {listClients.map((client, index) => (<>
+                <S.Row onClick={e => itemClick(index)} clickable>
                     <S.Column width='30%'>
                         {client.name}
                     </S.Column>

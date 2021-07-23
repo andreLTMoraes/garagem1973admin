@@ -5,6 +5,7 @@ import CardMenu from './components/CardMenu';
 import ListProducts from './components/ListProducts';
 import ListClients from './components/ListClients';
 import PopUpProduct from './components/PopUpProduct';
+import PopUpClient from './components/PopUpClient';
 
 import { products } from './data/products';
 import { clients } from './data/clients';
@@ -13,14 +14,20 @@ function App() {
   const [productList, setProductList] = useState(products)
   const [clientList, setClientList] = useState(clients)
   const [painel, setPainel] = useState('Clientes')
-  const [popup, setPopup] = useState('none')
+  const [popupProduct, setPopupProduct] = useState('none')
+  const [popupClient, setPopupClient] = useState('none')
   const [product, setProduct] = useState({})
+  const [client, setClient] = useState({})
 
   useEffect(() => console.log(productList), [productList]);
   useEffect(() => console.log(clientList), [clientList]);
 
+  /*
+  *   Funções para lista de produtos
+  */
+
   function handleProductItemClick(index){
-    setPopup('view');
+    setPopupProduct('view');
     setProduct({
       id: index,
       ...productList[index]
@@ -33,11 +40,11 @@ function App() {
       price: '',
       stock: ''
     });
-    setPopup('new');
+    setPopupProduct('new');
   }
 
   function handleSaveProduct(){
-    if(popup === 'new'){
+    if(popupProduct === 'new'){
       const p = {
         name: product.name,
         price: parseInt(product.price),
@@ -45,12 +52,11 @@ function App() {
       }
 
       setProductList([...productList, p]);
-      setPopup('none');
+      setPopupProduct('none');
     }
-    if(popup === 'view') {
+    if(popupProduct === 'view') {
       setProductList(productList.map((item, index) => {
         if(index !== product.id){
-          console.log(index);
           return item;
         }else{
           item = {
@@ -58,29 +64,86 @@ function App() {
             price: parseInt(product.price),
             stock: parseInt(product.stock)
           }
-          console.log(item);
           return item;
         }
       }));
-      setPopup('none');
+      setPopupProduct('none');
     }
   }
 
   function handleDeleteProduct(){
     setProductList(productList.filter((item, index) => index !== product.id));
-    setPopup('none');
+    setPopupProduct('none');
+  }
+
+  /*
+  * Funções para lista de clientes
+  */
+
+  function handleClientItemClick(index){
+    setPopupClient('view');
+    setClient(clientList[index])
+  }
+
+  function handleNewClient(){
+    setClient({
+      id: clientList[clientList.length - 1].id + 1,
+      name: '',
+      email: '',
+      phone: '',
+      address: [
+          {
+              publicArea: '',
+              number: '',
+              city: '',
+              state: ''
+          }
+      ]
+    });
+    setPopupClient('new');
+  }
+
+  function handleSaveClient(){
+    if(popupClient === 'new'){
+      setClientList([...clientList, client])
+      setPopupClient('none')
+    }
+    if(popupClient === 'view'){
+      setClientList(clientList.map(item => {
+        if(item.id !== client.id){
+          return item;
+        }else{
+          return client;
+        }
+      }));
+      setPopupClient('none');
+    }
+  }
+
+  function handleDeleteClient(){
+    setClientList(clientList.filter(item => item.id !== client.id));
+    setPopupClient('none');
   }
 
   return (
     <div className="App">
-      {popup !== 'none' && 
+      {popupProduct !== 'none' && 
       <PopUpProduct
         item={product}
-        mode={popup}
-        closeBtn={()=>setPopup('none')}
+        mode={popupProduct}
+        closeBtn={()=>setPopupProduct('none')}
         editBtn={setProduct}
         saveBtn={handleSaveProduct}
         deleteBtn={handleDeleteProduct}
+      />}
+      {popupClient !== 'none' &&
+      <PopUpClient
+        item={client}
+        mode={popupClient}
+        closeBtn={() => setPopupClient('none')}
+        editBtn={setClient}
+        saveBtn={handleSaveClient}
+        deleteBtn={handleDeleteClient}
       />}
       <S.Header>
         <S.Img src={logo}/>
@@ -110,12 +173,12 @@ function App() {
               <h2>{painel}</h2>
               <S.AddButton
               onClick={painel === 'Clientes' ?
-                ()=>{} :
+                handleNewClient :
                 handleNewProduct}
               >+ Novo</S.AddButton>
             </S.ListHeader>
             {painel === 'Clientes' ?
-              <ListClients listClients={clientList}/>
+              <ListClients listClients={clientList} itemClick={i=>handleClientItemClick(i)}/>
               :            
               <ListProducts listProducts={productList} itemClick={i=>handleProductItemClick(i)}/>
             }

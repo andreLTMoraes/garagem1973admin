@@ -11,6 +11,7 @@ export const Card = styled.div`
 
     &:hover {
         cursor: pointer;
+        filter: brightness(1.1);
     }
 `;
 
@@ -68,6 +69,10 @@ export const Line = styled.hr`
     border-top: ${props => props.weight || '1'}px solid #ccc;
 `;
 
+export const Hidder = styled.div`
+    display: ${props => props.hide ? 'none' : 'block'}
+`;
+
 // PopUp
 export const PopUpShadow = styled.div`
     display: flex;
@@ -83,6 +88,7 @@ export const PopUpShadow = styled.div`
 export const PopUpContainer = styled.div`
     display: flex;
     width: 80%;
+    max-height: 90%;
     background-color: #fff;
     margin: 2rem 0;
     border-radius: .7rem;
@@ -133,6 +139,10 @@ export const PopUpButton = styled.button`
     };
     font-weight: 600;
 
+    &:hover {
+        filter: brightness(1.2);
+    }
+
     &:focus,
     &:active {
         outline: none;
@@ -142,9 +152,23 @@ export const PopUpButton = styled.button`
 
 // PopUp Products
 export const PopUpImg = styled.img`
+    margin-right: 1rem;
     width: 40%;
 `;
 
 export const PopUpForm = styled.div`
-    margin-left: 1rem;
+    width: 100%;
+    padding-right: 1rem;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #ddd;
+        border-radius: 10px;
+    }
 `;
