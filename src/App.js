@@ -13,14 +13,14 @@ import { clients } from './data/clients';
 function App() {
   const [productList, setProductList] = useState(products)
   const [clientList, setClientList] = useState(clients)
-  const [painel, setPainel] = useState('Clientes')
+  const [painel, setPainel] = useState('Produtos')
   const [popupProduct, setPopupProduct] = useState('none')
   const [popupClient, setPopupClient] = useState('none')
   const [product, setProduct] = useState({})
   const [client, setClient] = useState({})
 
-  useEffect(() => console.log(productList), [productList]);
-  useEffect(() => console.log(clientList), [clientList]);
+  useEffect(() => localStorage.setItem('Produtos', JSON.stringify(productList)), [productList]);
+  useEffect(() => localStorage.setItem('Clientes', JSON.stringify(clientList)), [clientList]);
 
   /*
   *   Funções para lista de produtos

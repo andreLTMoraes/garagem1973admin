@@ -23,10 +23,10 @@ Garagem 1973 Admin
 </p>
 
 [//]: # (Add your gifs/images here:)
-<!-- div align="center">
-  <img src="https://i.ibb.co/T2GLsBG/Garagem1973.gif" 
+<div align="center">
+  <img src="https://i.ibb.co/PmgXzLg/garagem1973-admin.gif" 
     alt="demo" height="400">
-</!-->
+</div>
 
 <hr />
 
